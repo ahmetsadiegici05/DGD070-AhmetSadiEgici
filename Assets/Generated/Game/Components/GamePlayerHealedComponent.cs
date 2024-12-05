@@ -9,6 +9,8 @@
 public partial class GameEntity {
 
     static readonly PlayerHealedComponent playerHealedComponent = new PlayerHealedComponent();
+    internal bool isPlayerHealedComponent;
+    internal bool isPlayerDamagedComponent;
 
     public bool isPlayerHealed {
         get { return HasComponent(GameComponentsLookup.PlayerHealed); }
