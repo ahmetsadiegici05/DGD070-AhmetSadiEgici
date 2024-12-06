@@ -12,16 +12,22 @@ public class ChangePlayerHealthSystem : IExecuteSystem
 
     public void Execute()
     {
+        var playerEntity = _context.GetGroup(GameMatcher.PlayerHealth).GetSingleEntity();
+
+        if (playerEntity == null)
+        {
+            Debug.LogError("Player entity not found!");
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.D))
         {
-            var entity = _context.CreateEntity();
-            entity.isPlayerDamaged = true; 
+            playerEntity.isPlayerDamaged = true;
         }
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            var entity = _context.CreateEntity();
-            entity.isPlayerHealed = true; 
+            playerEntity.isPlayerHealed = true;
         }
     }
 }
