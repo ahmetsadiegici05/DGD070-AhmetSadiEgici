@@ -15,13 +15,13 @@ public class ChangePlayerHealthSystem : IExecuteSystem
         if (Input.GetKeyDown(KeyCode.D))
         {
             var entity = _context.CreateEntity();
-            entity.isPlayerDamagedComponent = true;
+            entity.isPlayerDamaged = true; 
         }
 
         if (Input.GetKeyDown(KeyCode.H))
         {
             var entity = _context.CreateEntity();
-            entity.isPlayerHealedComponent = true;
+            entity.isPlayerHealed = true; 
         }
     }
 }

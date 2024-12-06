@@ -2,7 +2,6 @@ using Entitas;
 
 public class PlayerHealthComponent : IComponent
 {
-    public float value;
+    public float Value { get; set; }
 
-    public int Value { get; internal set; }
 }

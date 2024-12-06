@@ -16,18 +16,16 @@ public class CheckPlayerHealthSystem : IExecuteSystem
 
         foreach (var entity in entities)
         {
-            
             if (entity.isPlayerDamaged)
             {
                 entity.ReplacePlayerHealth(Mathf.Max(0, entity.playerHealth.Value - 10));
-                entity.isPlayerDamaged = false; 
+                entity.isPlayerDamaged = false;
             }
 
-           
             if (entity.isPlayerHealed)
             {
                 entity.ReplacePlayerHealth(Mathf.Min(100, entity.playerHealth.Value + 10));
-                entity.isPlayerHealed = false; 
+                entity.isPlayerHealed = false;
             }
         }
     }

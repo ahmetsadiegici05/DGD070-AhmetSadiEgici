@@ -1,3 +1,4 @@
 using Entitas;
 
-public class PlayerDamagedComponent : IComponent{}
+[Game]
+public class PlayerDamagedComponent : IComponent {}
